@@ -1,6 +1,6 @@
-# autocomplete
+# VUE Components
 
-> 基于 `vue2` 的一个 autocomplete 组件，接口使用`github`的查询用户接口
+> 基于 `vue2` 的一个 autocomplete 组件，接口使用 `github` 查询用户接口
 
 ## Build Setup
 
@@ -28,3 +28,8 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## components
+
+* autocomplete
+* tree-folder
