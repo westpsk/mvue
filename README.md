@@ -1,6 +1,6 @@
 # autocomplete
 
-> 基于 `vue2` 的一个 autocomplete 组件，接口使用 `github` 的查询用户接口
+> 基于 `vue2` 的一个 autocomplete 组件，接口使用`github`的查询用户接口
 
 ## Build Setup
 
