@@ -1,7 +1,10 @@
  <template>
   <div id="app">
     this is a folder tree.
-    <tree-folder :folders="folders"/>
+    <tree-folder
+      v-for="folder in folders"
+      :folder="folder"
+      :key="folder.name"/>
   </div>
 </template>
 
@@ -15,21 +18,25 @@ export default {
       folders: [
         {
           name: 'node-1',
+          deptLevel: 1,
           children: [
             {
               name: 'node-1-a',
+              deptLevel: 2,
               children: [
-                { name: 'node-1-a-1' },
-                { name: 'node-1-a-2' }
+                { name: 'node-1-a-1', deptLevel: 2 },
+                { name: 'node-1-a-2', deptLevel: 2 }
               ]
             }
           ]
         },
         {
           name: 'node-2',
+          deptLevel: 1,
           children: [
             {
-              name: 'node-2-a'
+              name: 'node-2-a',
+              deptLevel: 2
             }
           ]
         }

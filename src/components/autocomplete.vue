@@ -141,7 +141,6 @@ export default {
     handleKeyDown (e) {
       let key = e.keyCode
       if (!this.showList) return
-      console.log('key', key)
       // key list
       const DOWN = 40
       const UP = 38
@@ -220,33 +219,9 @@ export default {
     }
   },
   // 生命周期
-  // beforeCreate () {
-  //   console.log('1. beforeCreate')
-  // },
   created () {
-    // console.log('2. created')
     this.type = this.initValue ? this.initValue : null
   }
-  // beforeMount () {
-  //   console.log('3. beforeMount')
-  // },
-  // mounted () {
-  //   console.log('4. mounted')
-  // },
-  // // 更新
-  // beforeUpdate () {
-  //   console.log('5. beforeUpdate')
-  // },
-  // updated () {
-  //   console.log('6. updated')
-  // },
-  // beforeDestroy () {
-  //   console.log('7. beforeDestory')
-  // },
-  // destroyed () {
-  //   console.log('8. destroyed')
-  // }
-
 }
 </script>
 
