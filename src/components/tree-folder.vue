@@ -1,14 +1,17 @@
 <template>
   <li class="cp-tree-node"
-    @click.stop="handleClick(folder)">
-    <span>{{folder.name}}</span>
-    <ul v-if="!folder.expanded">
-      <!-- <tree-folder-contents :children="folder.children"/> -->
+    @click.stop="handleClick(tree)">
+    <div class="cp-tree-node__content"
+      :style="{'padding-left': (tree[treeProps.level] - 1) * 16 + 'px'}">
+      {{tree[treeProps.label]}}
+    </div>
+    <ul v-if="!tree.expanded">
       <tree-folder
-        v-if='folder.children'
-        v-for="child in folder.children"
-        :key="child.name"
-        :folder='child'/>
+        v-if='tree[treeProps.children]'
+        v-for="child in tree[treeProps.children]"
+        :treeProps='treeProps'
+        :key="child[treeProps.label]"
+        :tree='child'/>
     </ul>
   </li>
 </template>
@@ -16,9 +19,11 @@
 <script>
 export default {
   name: 'treeFolder',
-  props: ['folder'],
-  beforeCreate () {
-    // this.$options.components.TreeFolderContents = require('./tree-folder-contents.vue').default
+  props: {
+    tree: {
+      type: Object
+    },
+    treeProps: {}
   },
   methods: {
     handleClick: function (folder, e) {
@@ -31,3 +36,9 @@ export default {
   }
 }
 </script>
+
+<style>
+ul,li{
+  list-style-type: none;
+}
+</style>

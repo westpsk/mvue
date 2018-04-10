@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Home from '@/views/home'
 import Notfound from '@/views/404'
-import Tree from '@/views/tree'
+import List from '@/views/list'
 
 Vue.use(Router)
 
@@ -21,9 +21,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/tree',
-      name: 'Tree',
-      component: Tree
+      path: '/list',
+      name: 'List',
+      component: List
     },
     {
       path: '*',
