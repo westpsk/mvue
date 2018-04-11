@@ -5,6 +5,8 @@
       v-for="tree in treeDatas"
       :tree="tree"
       :treeProps="treeProps"
+      :currentNode="currentNode"
+      :handleClick="handleClick"
       :key="tree[treeProps.label]"/>
   </div>
 </template>
@@ -22,7 +24,19 @@ export default {
         children: 'children',
         level: 'deptLevel'
       },
-      treeDatas: treeDatas
+      treeDatas: treeDatas,
+      currentNode: ''
+    }
+  },
+  methods: {
+    handleClick: function (folder, e) {
+      this.currentNode = folder.name
+      console.log('this.currentNode', this.currentNode)
+      if (folder.expanded) {
+        this.$set(folder, 'expanded', false)
+      } else {
+        this.$set(folder, 'expanded', true)
+      }
     }
   }
 }
